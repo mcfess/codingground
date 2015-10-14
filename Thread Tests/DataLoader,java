@@ -1,0 +1,27 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
+
+public class DataLoader{
+    
+    public DataLoader(){}
+    
+    public List<String[]> result = null;
+    	
+    public void loadData(boolean loadData){
+		if(loadData){
+    		Scanner f = null;
+			try {f = new Scanner(new File("data.txt"));} catch (Exception e) {}
+    		if(f != null){
+				result = new ArrayList<String[]>();
+				while(f.hasNext()) {
+	    		   result.add(f.next().split(","));
+	    		}
+    		}
+    		f = null;
+    		
+		}
+    }
+
+}
